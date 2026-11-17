@@ -1,0 +1,19 @@
+services:
+  - type: worker
+    name: pch-worker
+    runtime: node
+    plan: starter
+    buildCommand: bun install && bun run build
+    startCommand: bun run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: REDIS_URL
+        fromDatabase:
+          name: pch-redis
+          property: connectionString
+
+databases:
+  - name: pch-redis
+    plan: starter
+    ipAllowList: []
