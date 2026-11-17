@@ -3,12 +3,14 @@ node_modules/
 
 # Build output
 dist/
+build/
 
 # Environment variables
 .env
 .env.*
 .env.local
 .env.production
+!.env.example
 
 # Logs
 logs/
@@ -18,8 +20,13 @@ yarn-debug.log*
 yarn-error.log*
 bun.log*
 
+# Code coverage & Testing
+coverage/
+*.lcov
+
 # OS and Editor
 .DS_Store
+Thumbs.db
 *.pem
 .idea/
 .vscode/
